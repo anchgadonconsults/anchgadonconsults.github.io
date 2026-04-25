@@ -2,7 +2,7 @@
 
 Personal portfolio site for Angel Gadon — data systems specialist, econometrician, and statistical educator based in the Philippines.
 
-**Live site:** [anchgadon.com](https://anchgadon.com)
+**Live site:** [anchgadon.com](https://anchgadonconsults.github.io)
 
 ---
 
