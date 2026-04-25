@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Angel Gadon"/>
+<title>Angel Gadon — Data Systems Specialist &amp; Econometrician | Philippines</title>
+<meta name="description" content="Angel Gadon is a data systems specialist, econometrician, and statistical educator in the Philippines. Available for research, consulting, and tutoring."/>
+<link rel="canonical" href="https://anchgadon.com/"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://anchgadon.com/"/>
+<meta property="og:title" content="Angel Gadon — Data Systems Specialist &amp; Econometrician"/>
+<meta property="og:description" content="Data systems specialist, econometrician, and statistical educator in the Philippines. Available for research, consulting, and tutoring."/>
+<meta property="og:image" content="https://anchgadon.com/og-image.png"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Angel Gadon — Data Systems Specialist &amp; Econometrician"/>
+<meta name="twitter:description" content="Data systems specialist, econometrician, and statistical educator in the Philippines."/>
+
+<!-- JSON-LD Person Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Angel Gadon",
+  "url": "https://anchgadon.com/",
+  "jobTitle": "Data Systems Specialist, Econometrician, Statistical Educator",
+  "description": "Data systems specialist, econometrician, and statistical educator based in the Philippines. Available for research, consulting, and tutoring.",
+  "email": "mailto:anchgadonconsults@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "PH"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/anchgadonconsults"
+  ],
+  "knowsAbout": ["Data Systems", "Econometrics", "Statistical Modeling", "Python", "R", "STATA", "SQL", "EViews", "Panel Data", "Causal Inference"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+</head>
+<body>
+
+<!-- ── SITE HEADER ────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="header-logo" href="#" onclick="showPage('home'); return false;">Angel</a>
+    <nav class="header-nav" aria-label="Primary navigation">
+      <a class="fnav-link active" href="#" onclick="showPage('home')">Home</a>
+      <a class="fnav-link" href="#" onclick="showPage('about')">About</a>
+      <a class="fnav-link" href="#" onclick="showPage('services')">Services</a>
+      <a class="fnav-link" href="#" onclick="showPage('portfolio')">Work</a>
+      <button class="fnav-cta" onclick="showPage('contact')">Let's talk</button>
+    </nav>
+    <div class="header-controls">
+      <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+      <button class="burger" id="burgerBtn" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+    <a class="mob-link active" href="#" onclick="showPage('home');closeMenu()">Home</a>
+    <a class="mob-link" href="#" onclick="showPage('about');closeMenu()">About</a>
+    <a class="mob-link" href="#" onclick="showPage('services');closeMenu()">Services</a>
+    <a class="mob-link" href="#" onclick="showPage('portfolio');closeMenu()">Work</a>
+    <button class="mob-cta" onclick="showPage('contact');closeMenu()">Let's talk</button>
+  </nav>
+</header>
+
+
+<main id="main-content">
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 1 — HOME
+══════════════════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+  <div class="hero">
+    <div class="container">
+      <div class="eyebrow">Data Systems · Econometrics · Statistical Tutoring</div>
+      <h1 class="page-h1"><em>Angel Gadon</em> — turning<br>complex data into clear decisions.</h1>
+      <p class="lead">I help researchers, businesses, and institutions build rigorous data systems, run econometric models, and understand the statistical tools that drive results.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="showPage('contact')">Work with Angel</button>
+        <button class="btn-ghost" onclick="showPage('portfolio')">View case studies →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="background:var(--surface);">
+    <div class="container">
+      <div class="sec-eyebrow">Services</div>
+      <h2 class="sec-h2">What I <em>bring to your work</em></h2>
+      <p class="lead" style="margin-bottom:28px;">Whether you need a data pipeline built, a regression model reviewed, or someone to teach your team — I've got you covered.</p>
+      <div class="services-grid">
+        <div class="svc-card accent">
+          <div class="svc-title">Data Systems</div>
+          <div class="svc-body">Design, build, and audit data pipelines, databases, and reporting infrastructure tailored to your workflow.</div>
+          <div class="svc-tag">Most requested</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-title">Econometric Modeling</div>
+          <div class="svc-body">Applied regression, time-series, panel data analysis, and causal inference for research and policy work.</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-title">Statistical Tutoring</div>
+          <div class="svc-body">One-on-one or group sessions on R, Python, STATA, EViews — from basics to advanced applied methods.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="background:var(--ivory);">
+    <div class="container">
+      <div class="sec-eyebrow">Case studies</div>
+      <h2 class="sec-h2"><em>Recent work</em> that speaks</h2>
+      <p class="lead" style="margin-bottom:28px;">Real projects, measurable outcomes.</p>
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="case-label">Econometric Analysis</div>
+          <div class="case-title">Labour market impact study for a regional policy brief</div>
+          <div class="case-body">Built a panel data model in R to measure wage elasticity across three sectors, informing a government policy recommendation.</div>
+          <div style="display:flex;align-items:baseline;gap:8px;"><div class="case-num">3×</div><div class="case-outcome-lbl">faster analysis delivery vs. prior manual approach</div></div>
+        </div>
+        <div class="case-card">
+          <div class="case-label">Data Systems</div>
+          <div class="case-title">Automated reporting pipeline for a research institute</div>
+          <div class="case-body">Replaced a fragile Excel workflow with a SQL + Python pipeline generating monthly dashboards automatically.</div>
+          <div style="display:flex;align-items:baseline;gap:8px;"><div class="case-num">90%</div><div class="case-outcome-lbl">reduction in manual reporting hours</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="background:var(--surface);">
+    <div class="container">
+      <div class="sec-eyebrow">Featured work</div>
+      <h2 class="sec-h2"><em>Selected projects</em> in depth</h2>
+      <p class="lead" style="margin-bottom:28px;">A sample of the kind of work I do — real problems, concrete outcomes.</p>
+      <div class="featured-grid" id="homeFeaturedGrid"></div>
+      <div style="margin-top:20px;">
+        <button class="btn-ghost" onclick="showPage('portfolio')">See all projects →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pre-footer + Footer -->
+  <div class="pre-footer">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div>
+        <div class="pre-footer-h">Ready to make your<br>data <em>work harder?</em></div>
+        <div class="pre-footer-sub">Let's talk about your project — no commitment, just clarity.</div>
+      </div>
+      <button class="btn-primary" onclick="showPage('contact')">Get in touch →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 2 — SERVICES
+══════════════════════════════════════════════════════════ -->
+<div id="page-services" class="page">
+  <div class="section" style="background:var(--surface);padding-bottom:0;border-bottom:none;">
+    <div class="container">
+      <div class="eyebrow">Services</div>
+      <h2 class="page-h1">Precision work,<br><em>tailored to your data.</em></h2>
+      <p class="lead">Three focused offerings — each designed to solve a real problem and deliver a concrete output.</p>
+    </div>
+  </div>
+
+  <div class="process-strip">
+    <div class="container">
+      <div class="process-steps">
+        <div class="process-step"><div class="step-num">1</div><div class="step-text">Discovery call &amp; scope</div></div>
+        <div class="step-arrow">→</div>
+        <div class="process-step"><div class="step-num">2</div><div class="step-text">Proposal &amp; timeline</div></div>
+        <div class="step-arrow">→</div>
+        <div class="process-step"><div class="step-num">3</div><div class="step-text">Delivery &amp; review rounds</div></div>
+        <div class="step-arrow">→</div>
+        <div class="process-step"><div class="step-num">4</div><div class="step-text">Handoff &amp; documentation</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-section">
+    <div class="container">
+      <div class="svc-header">
+        <div><div class="svc-num">01</div><h2 class="svc-h2">Data Systems <em>&amp; Infrastructure</em></h2></div>
+        <div class="svc-badge badge-pop">Most requested</div>
+      </div>
+      <p class="svc-body-text">From messy spreadsheets to robust pipelines — I design, build, and audit data systems that are clean, automated, and built to last.</p>
+      <div class="deliverables">
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Database design &amp; normalisation</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Automated ETL pipelines</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Data cleaning &amp; validation scripts</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Dashboard &amp; reporting setup</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Existing system audits</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Full documentation &amp; handoff</div></div>
+      </div>
+      <div class="tools-row"><span class="tool-pill">Python</span><span class="tool-pill">SQL</span><span class="tool-pill">PostgreSQL</span><span class="tool-pill">R</span><span class="tool-pill">Power BI</span><span class="tool-pill">Excel / VBA</span></div>
+      <div class="rate-row"><div><div class="rate-val">₱ / $</div><div class="rate-label">Project-based · scope discussed on discovery call</div></div><button class="rate-cta" onclick="showPage('contact')">Request a quote →</button></div>
+    </div>
+  </div>
+
+  <div class="svc-section">
+    <div class="container">
+      <div class="svc-header">
+        <div><div class="svc-num">02</div><h2 class="svc-h2">Econometric <em>Modeling &amp; Analysis</em></h2></div>
+        <div class="svc-badge badge-res">Research-grade</div>
+      </div>
+      <p class="svc-body-text">Rigorous applied econometrics for policy research, academic work, and business intelligence. I help you choose the right model, run it correctly, and present findings with confidence.</p>
+      <div class="deliverables">
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">OLS, IV, panel data models</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Time-series &amp; forecasting</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Causal inference &amp; DiD</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Regression diagnostics &amp; testing</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Results write-up &amp; visualisation</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Peer-review-ready outputs</div></div>
+      </div>
+      <div class="tools-row"><span class="tool-pill">R</span><span class="tool-pill">STATA</span><span class="tool-pill">EViews</span><span class="tool-pill">Python (statsmodels)</span><span class="tool-pill">LaTeX</span></div>
+      <div class="rate-row"><div><div class="rate-val">₱ / $</div><div class="rate-label">Per project or per model · hourly retainer available</div></div><button class="rate-cta" onclick="showPage('contact')">Request a quote →</button></div>
+    </div>
+  </div>
+
+  <div class="svc-section">
+    <div class="container">
+      <div class="svc-header">
+        <div><div class="svc-num">03</div><h2 class="svc-h2">Statistical <em>Tool Tutoring</em></h2></div>
+        <div class="svc-badge badge-tut">1-on-1 &amp; group</div>
+      </div>
+      <p class="svc-body-text">Whether you are a graduate student struggling with R, a professional learning Python for data work, or a team that needs to get up to speed on STATA — I teach in a way that sticks.</p>
+      <div class="deliverables">
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Beginner to advanced levels</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">1-on-1 or small group sessions</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Custom exercises &amp; datasets</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Session recordings &amp; notes</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Thesis &amp; dissertation support</div></div>
+        <div class="deliv-item"><div class="deliv-dot"></div><div class="deliv-text">Flexible scheduling (online)</div></div>
+      </div>
+      <div class="tools-row"><span class="tool-pill">R / RStudio</span><span class="tool-pill">Python</span><span class="tool-pill">STATA</span><span class="tool-pill">EViews</span><span class="tool-pill">Excel</span><span class="tool-pill">SPSS</span></div>
+      <div class="rate-row"><div><div class="rate-val">₱ / $</div><div class="rate-label">Per session or package bundles · group rates available</div></div><button class="rate-cta" onclick="showPage('contact')">Book a session →</button></div>
+    </div>
+  </div>
+
+  <div class="section" style="background:var(--surface);">
+    <div class="container">
+      <div class="sec-eyebrow">Common questions</div>
+      <div class="faq-item"><div class="faq-q">How does a project typically start?</div><div class="faq-a">With a short discovery call — usually 20–30 minutes. We talk through your problem, your data, and your timeline. From there I send a clear proposal with scope, deliverables, and pricing.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you work with clients outside the Philippines?</div><div class="faq-a">Yes — all engagements are conducted online. I work with researchers and businesses across Southeast Asia, and internationally by arrangement.</div></div>
+      <div class="faq-item"><div class="faq-q">Can you help if my data is messy or incomplete?</div><div class="faq-a">That is often where the most value is found. Data cleaning, restructuring, and validation are core parts of my process — not afterthoughts.</div></div>
+      <div class="faq-item"><div class="faq-q">What if I am not sure which service I need?</div><div class="faq-a">Just reach out and describe your situation. I will point you in the right direction — even if that means referring you to someone better suited.</div></div>
+    </div>
+  </div>
+
+  <div class="pre-footer">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div><div class="pre-footer-h">Not sure where to start?<br><em>Let's figure it out together.</em></div><div class="pre-footer-sub">A 20-minute call is all it takes to get clarity on your next step.</div></div>
+      <button class="btn-primary" onclick="showPage('contact')">Schedule a free call →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 3 — PORTFOLIO
+══════════════════════════════════════════════════════════ -->
+<div id="page-portfolio" class="page">
+  <div class="section" style="background:var(--surface);padding-bottom:0;border-bottom:none;">
+    <div class="container">
+      <div class="eyebrow">Portfolio · Case Studies</div>
+      <h2 class="page-h1">Problems solved,<br><em>outcomes delivered.</em></h2>
+      <p class="lead">Featured cases in depth, plus a searchable record of additional work. Search by keyword, tag, or method.</p>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <div class="filter-row">
+        <span class="filter-label">Filter</span>
+        <button class="filter-btn on" onclick="setFilter('all',this)">All</button>
+        <button class="filter-btn" onclick="setFilter('Data Systems',this)">Data Systems</button>
+        <button class="filter-btn" onclick="setFilter('Econometrics',this)">Econometrics</button>
+        <button class="filter-btn" onclick="setFilter('Tutoring',this)">Tutoring</button>
+      </div>
+      <div class="search-side">
+        <span class="results-count" id="countLabel">7 projects</span>
+        <div class="search-input-row">
+          <svg class="search-icon" viewBox="0 0 14 14" fill="none"><circle cx="5.5" cy="5.5" r="4" stroke="#888780" stroke-width="1.1"/><path d="M9 9l3.5 3.5" stroke="#888780" stroke-width="1.1" stroke-linecap="round"/></svg>
+          <input class="search-input" id="searchInput" type="text" placeholder="Search…" oninput="handleSearch()"/>
+          <button class="search-clear" id="clearBtn" onclick="clearSearch()">✕</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-wrap" style="background:var(--surface);">
+    <div class="container">
+      <div class="section-divider" id="featDiv"><span>Featured cases</span></div>
+      <div class="featured-grid" id="featuredGrid"></div>
+      <div class="section-divider" id="moreDiv"><span>More work</span></div>
+      <div id="resumeList"></div>
+      <div class="empty-state" id="emptyState">
+        <h2 class="empty-h">No matches for <em id="emptyTerm">that</em></h2>
+        <p class="empty-sub">Try a different keyword — method name, tool, or outcome.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pre-footer">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div><div class="pre-footer-h">Have a similar problem?<br><em>Let's solve it.</em></div><div class="pre-footer-sub">Every engagement starts with understanding your situation — not a template.</div></div>
+      <button class="btn-primary" onclick="showPage('contact')">Start a conversation →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 4 — ABOUT
+══════════════════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="section" style="background:var(--surface);">
+    <div class="container">
+      <div class="eyebrow">About</div>
+      <div class="about-hero-grid">
+        <div>
+          <h2 class="page-h1">I work at the edge<br>where <em>data meets decisions.</em></h2>
+          <p class="lead">I am a data systems specialist, econometrician, and statistical educator. My work sits at the intersection of rigorous methodology and practical results.</p>
+        </div>
+        <div class="avatar"><div class="avatar-initials">A</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="background:var(--ivory);">
+    <div class="container">
+      <div class="sec-eyebrow">My philosophy</div>
+      <div class="pull-quote">"Most data problems are not really data problems — they are clarity problems."</div>
+      <p class="body-text">When a pipeline is broken, when a model keeps getting rejected, when someone cannot explain their own results — the issue is rarely the data itself. It is the gap between what the data is saying and what the person working with it understands.</p>
+      <p class="body-text">That gap is exactly where I work. I bring the technical depth to build robust systems and models, and the patience to make sure the people using them actually understand what they have in front of them.</p>
+    </div>
+  </div>
+
+  <div class="section" style="background:var(--surface);">
+    <div class="container">
+      <div class="sec-eyebrow">Areas of expertise</div>
+      <div class="expertise-grid">
+        <div class="exp-card"><div class="exp-title">Data Systems &amp; Infrastructure</div><div class="exp-body">Designing and building data pipelines, databases, and automated reporting systems that are clean, reliable, and built to scale.</div></div>
+        <div class="exp-card"><div class="exp-title">Applied Econometrics</div><div class="exp-body">Panel data, time-series, causal inference, and regression diagnostics. Rigorous model selection, assumption testing, and results that hold up under scrutiny.</div></div>
+        <div class="exp-card"><div class="exp-title">Statistical Modeling</div><div class="exp-body">Forecasting, demand modeling, and quantitative analysis — with a focus on interpretability alongside technical correctness.</div></div>
+        <div class="exp-card"><div class="exp-title">Statistical Education</div><div class="exp-body">Teaching statistical tools in a way that transfers — not just how to run a command, but why the method works and how to defend it.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="background:var(--ivory);">
+    <div class="container">
+      <div class="sec-eyebrow">Tools &amp; methods</div>
+      <div class="tools-block"><div class="tool-category">Statistical &amp; econometric</div><div class="tools-row"><span class="tool-pill" style="border-color:#9FE1CB;color:#085041;background:#E1F5EE;">R</span><span class="tool-pill" style="border-color:#9FE1CB;color:#085041;background:#E1F5EE;">STATA</span><span class="tool-pill" style="border-color:#9FE1CB;color:#085041;background:#E1F5EE;">EViews</span><span class="tool-pill">SPSS</span><span class="tool-pill">Python (statsmodels)</span><span class="tool-pill">LaTeX</span></div></div>
+      <div class="tools-block"><div class="tool-category">Data systems &amp; engineering</div><div class="tools-row"><span class="tool-pill" style="border-color:#9FE1CB;color:#085041;background:#E1F5EE;">Python</span><span class="tool-pill" style="border-color:#9FE1CB;color:#085041;background:#E1F5EE;">SQL</span><span class="tool-pill">PostgreSQL</span><span class="tool-pill">Excel / VBA</span><span class="tool-pill">Power BI</span></div></div>
+      <div class="tools-block"><div class="tool-category">Methods</div><div class="tools-row"><span class="tool-pill">OLS · IV · DiD</span><span class="tool-pill">Panel data</span><span class="tool-pill">ARIMA · ETS</span><span class="tool-pill">Robust inference</span><span class="tool-pill">Causal inference</span></div></div>
+    </div>
+  </div>
+
+  <div class="section" style="background:var(--surface);">
+    <div class="container">
+      <div class="sec-eyebrow">How I work</div>
+      <div class="value-row"><div class="value-num">01</div><div><div class="value-title">I start with the problem, not the method.</div><div class="value-body">Tools are chosen because they fit the question — not because they are impressive or familiar.</div></div></div>
+      <div class="value-row"><div class="value-num">02</div><div><div class="value-title">I document everything I build.</div><div class="value-body">A pipeline or system that only I can maintain is not a deliverable — it is a dependency. Every engagement ends with clear documentation.</div></div></div>
+      <div class="value-row"><div class="value-num">03</div><div><div class="value-title">I explain until it makes sense.</div><div class="value-body">Whether it is a tutoring session or a project handoff, I do not move on until the person in front of me understands what was done and why.</div></div></div>
+      <div class="value-row"><div class="value-num">04</div><div><div class="value-title">Confidentiality is non-negotiable.</div><div class="value-body">Client data, context, and project details stay private — always. The work I share publicly reflects the methods and depth of what I do, never who I do it for.</div></div></div>
+    </div>
+  </div>
+
+  <div class="section" style="background:var(--ivory);">
+    <div class="container">
+      <div class="sec-eyebrow">Background</div>
+      <div class="cred-list">
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-body"><strong>Academic foundation in economics and statistics</strong> — formal training in econometric theory, quantitative methods, and applied data analysis.</div></div>
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-body"><strong>Applied across research and industry settings</strong> — experience spanning policy analysis, academic research support, and private sector data work.</div></div>
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-body"><strong>Educator and practitioner in parallel</strong> — teaching statistical tools actively sharpens how I think about the work. The two roles inform each other.</div></div>
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-body"><strong>Based in the Philippines, working online</strong> — available for remote engagements across Southeast Asia and internationally by arrangement.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pre-footer">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div><div class="pre-footer-h">Enough about me —<br><em>tell me about your problem.</em></div><div class="pre-footer-sub">A short conversation is usually all it takes to know if we are a good fit.</div></div>
+      <button class="btn-primary" onclick="showPage('contact')">Get in touch →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE 5 — CONTACT
+══════════════════════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="section" style="background:var(--surface);padding-bottom:0;border-bottom:none;">
+    <div class="container">
+      <div class="eyebrow">Contact · Hire</div>
+      <h2 class="page-h1">Tell me what<br>you are <em>working on.</em></h2>
+      <p class="lead">No lengthy forms, no automated responses. Fill in what you can and I will get back to you within 24 hours.</p>
+    </div>
+  </div>
+
+  <div class="contact-wrap">
+    <div class="form-col">
+      <div id="form-area">
+        <div class="field-group"><label class="field-label" for="field-name">Your name</label><input type="text" id="field-name" class="form-input" placeholder="How should I address you?"/></div>
+        <div class="field-group"><label class="field-label" for="field-email">Email address</label><input type="email" id="field-email" class="form-input" placeholder="Where should I reply?"/></div>
+        <div class="field-group">
+          <label class="field-label" id="field-service-label">What do you need help with?</label>
+          <div class="service-pills">
+            <button class="pill-toggle" onclick="togglePill(this)">Data Systems</button>
+            <button class="pill-toggle" onclick="togglePill(this)">Econometrics</button>
+            <button class="pill-toggle" onclick="togglePill(this)">Statistical Tutoring</button>
+            <button class="pill-toggle" onclick="togglePill(this)">Not sure yet</button>
+          </div>
+        </div>
+        <div class="field-group"><label class="field-label" for="field-problem">Describe the problem</label><textarea id="field-problem" class="form-input" placeholder="What is the situation? What have you tried? What does success look like?"></textarea></div>
+        <div class="field-group"><label class="field-label" for="field-timeline">Timeline</label><select id="field-timeline" class="form-input"><option value="" disabled selected>When do you need this done?</option><option>As soon as possible</option><option>Within 2 weeks</option><option>Within a month</option><option>Flexible — quality over speed</option><option>Ongoing / retainer</option></select></div>
+        <div class="field-group"><label class="field-label" for="field-budget">Budget range (optional)</label><select id="field-budget" class="form-input"><option value="" disabled selected>Approximate budget</option><option>Under ₱5,000 / $100</option><option>₱5,000–₱20,000 / $100–$400</option><option>₱20,000–₱50,000 / $400–$1,000</option><option>₱50,000+ / $1,000+</option><option>Let's discuss</option></select><div class="field-hint">This is a guide — not a constraint. Scope can almost always be adjusted.</div></div>
+        <div class="field-group"><label class="field-label" for="field-source">How did you find me? (optional)</label><select id="field-source" class="form-input"><option value="" disabled selected>Select one</option><option>LinkedIn</option><option>Referral</option><option>Web search</option><option>Social media</option><option>Other</option></select></div>
+        <div class="submit-row">
+          <button class="btn-submit" onclick="handleSubmit()">Send inquiry →</button>
+          <p class="form-note">Your details are kept private. I do not share, sell, or store inquiry data beyond what is needed to respond.</p>
+        </div>
+      </div>
+      <div class="success-state" id="success">
+        <div class="success-icon"><svg viewBox="0 0 18 18" fill="none" width="20" height="20"><path d="M3 9l4 4 8-8" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h2 class="success-h">Message received —<br><em>I'll be in touch soon.</em></h2>
+        <p class="success-body">Expect a reply within 24 hours. If the inquiry is straightforward, I may respond with a direct answer. If it needs more discussion, I will suggest a short call.</p>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-block"><div class="sidebar-label">Availability</div><div class="avail-indicator"><div class="avail-dot"></div><div class="avail-text">Currently accepting work</div></div><div class="avail-sub">Open to new projects and sessions. Retainer spots are limited.</div></div>
+      <div class="sidebar-block"><div class="sidebar-label">Response time</div><div class="response-card"><div class="response-val">24 hrs</div><div class="response-lbl">typical reply time</div></div></div>
+      <div class="sidebar-block"><div class="sidebar-label">Reach me directly</div><div class="contact-link"><div class="contact-icon-sm"><svg viewBox="0 0 12 12" fill="none"><rect x="1" y="2.5" width="10" height="7" rx="1.5" stroke="#1D9E75" stroke-width="1"/><path d="M1 4l5 3.5L11 4" stroke="#1D9E75" stroke-width="1" stroke-linecap="round"/></svg></div><div class="contact-detail-sm"><a href="mailto:anchgadonconsults@gmail.com">anchgadonconsults@gmail.com</a></div></div><div class="contact-link"><div class="contact-icon-sm"><svg viewBox="0 0 12 12" fill="none"><rect x="1.5" y="1.5" width="9" height="9" rx="2" stroke="#1D9E75" stroke-width="1"/><path d="M4.5 5.5v3M4.5 3.5v.5" stroke="#1D9E75" stroke-width="1" stroke-linecap="round"/><path d="M7.5 8.5V6a1 1 0 00-2 0" stroke="#1D9E75" stroke-width="1" stroke-linecap="round"/></svg></div><div class="contact-detail-sm"><a href="https://www.linkedin.com/in/anchgadonconsults" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></div></div></div>
+      <div class="sidebar-block"><div class="sidebar-label">What happens next</div><div class="process-note"><div class="pn-step"><div class="pn-num">01</div><div class="pn-text">I review your inquiry and reply within 24 hours</div></div><div class="pn-step"><div class="pn-num">02</div><div class="pn-text">If needed, we schedule a 20-min discovery call</div></div><div class="pn-step"><div class="pn-num">03</div><div class="pn-text">I send a clear proposal with scope and pricing</div></div><div class="pn-step"><div class="pn-num">04</div><div class="pn-text">We align on timeline and get to work</div></div></div></div>
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+<footer class="footer-main">
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <div class="col-label">Angel</div>
+        <div class="bio-logo">Angel</div>
+        <p class="bio-text">Data systems specialist, econometrician, and statistical educator. I help researchers and teams turn complex data into clear, defensible decisions.</p>
+        <div class="avail-pill"><div class="avail-pill-dot"></div><div class="avail-pill-text"><strong>Available</strong> for new projects &amp; sessions</div></div>
+      </div>
+      <div>
+        <div class="col-label">Contact</div>
+        <ul class="footer-contact-list">
+          <li class="fc-item">
+            <div class="fc-icon"><svg viewBox="0 0 12 12" fill="none"><rect x="1" y="2.5" width="10" height="7" rx="1.5" stroke="#1D9E75" stroke-width="1"/><path d="M1 4l5 3.5L11 4" stroke="#1D9E75" stroke-width="1" stroke-linecap="round"/></svg></div>
+            <div><div class="fc-type">Email</div><div class="fc-val"><a href="mailto:anchgadonconsults@gmail.com">anchgadonconsults@gmail.com</a></div></div>
+          </li>
+          <li class="fc-item">
+            <div class="fc-icon"><svg viewBox="0 0 12 12" fill="none"><rect x="1.5" y="1.5" width="9" height="9" rx="2" stroke="#1D9E75" stroke-width="1"/><path d="M4.5 5.5v3M4.5 3.5v.5" stroke="#1D9E75" stroke-width="1" stroke-linecap="round"/><path d="M7.5 8.5V6a1 1 0 00-2 0" stroke="#1D9E75" stroke-width="1" stroke-linecap="round"/></svg></div>
+            <div><div class="fc-type">LinkedIn</div><div class="fc-val"><a href="https://www.linkedin.com/in/anchgadonconsults" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></div></div>
+          </li>
+          <li class="fc-item">
+            <div class="fc-icon"><svg viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4.5" stroke="#1D9E75" stroke-width="1"/><path d="M6 3.5V6l1.5 1.5" stroke="#1D9E75" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="fc-type">Response time</div><div class="fc-val">Within 24 hours</div></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <div class="footer-copy">© 2025 <em>Angel</em> — All rights reserved.</div>
+      <div class="footer-made">Confidentiality by default.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════════ -->
+<script defer src="script.js"></script>
+</body>
+</html>
