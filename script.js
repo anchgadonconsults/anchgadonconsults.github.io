@@ -95,7 +95,7 @@ function clearSearch(){document.getElementById('searchInput').value='';searchQue
 function setFilter(f,btn){activeFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');render();}
 
 /* ── CONTACT FORM ─────────────────────────────────────────── */
-const SCRIPT_URL='https://script.google.com/macros/s/AKfycbw2lKa2Y18SkXE24Rz4TWvUnQaVrNO68EYXot3MvuQ9Oqufaf1YbqBUy02fa5ZcT9CA/exec';
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbwuzISeGdLTGj5HyAKwGldxIpr2sVGwbKmiD7erHmU5j64gDXe9jfETGtAv-C4GW_rX/exec';
 
 function togglePill(el){el.classList.toggle('selected');}
 
