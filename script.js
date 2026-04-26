@@ -131,24 +131,33 @@ async function handleSubmit(){
   btn.disabled=true;
   btn.textContent='Sending…';
 
-  try{
-    await fetch(SCRIPT_URL,{
-      method:'POST',
-      mode:'no-cors',
-      body:new URLSearchParams({name,email,service,description,timeline,budget,referral})
-    });
-    document.getElementById('form-area').style.display='none';
-    const successEl=document.getElementById('success');
-    successEl.classList.add('visible');
-    successEl.setAttribute('tabindex','-1');
-    successEl.focus();
-    successEl.scrollIntoView({behavior:'smooth',block:'center'});
-  }catch(err){
-    btn.disabled=false;
-    btn.textContent='Send inquiry →';
-    const errEl=document.getElementById('submit-error');
-    if(errEl)errEl.style.display='block';
-  }
+  const iframe=document.createElement('iframe');
+  iframe.name='gas_frame';
+  iframe.style.display='none';
+  document.body.appendChild(iframe);
+
+  const form=document.createElement('form');
+  form.method='POST';
+  form.action=SCRIPT_URL;
+  form.target='gas_frame';
+  Object.entries({name,email,service,description,timeline,budget,referral}).forEach(([k,v])=>{
+    const inp=document.createElement('input');
+    inp.type='hidden';inp.name=k;inp.value=v;
+    form.appendChild(inp);
+  });
+  document.body.appendChild(form);
+  form.submit();
+  setTimeout(()=>{
+    document.body.removeChild(form);
+    document.body.removeChild(iframe);
+  },5000);
+
+  document.getElementById('form-area').style.display='none';
+  const successEl=document.getElementById('success');
+  successEl.classList.add('visible');
+  successEl.setAttribute('tabindex','-1');
+  successEl.focus();
+  successEl.scrollIntoView({behavior:'smooth',block:'center'});
 }
 
 /* ── HOME FEATURED ────────────────────────────────────────── */
