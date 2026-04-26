@@ -225,3 +225,4 @@ function toggleTheme(){
 render();
 renderHomeFeatured();
 applyTheme(currentTheme);
+document.getElementById('footer-year').textContent = new Date().getFullYear();
