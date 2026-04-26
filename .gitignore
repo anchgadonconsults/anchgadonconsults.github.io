@@ -1,0 +1,36 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+build/
+.cache/
+
+# Netlify CLI
+.netlify/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backup / temp files
+*.bak
+*.old
+*.orig
+*.tmp
+
+# Logs
+*.log
+npm-debug.log*
