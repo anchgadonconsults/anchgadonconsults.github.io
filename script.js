@@ -95,8 +95,58 @@ function clearSearch(){document.getElementById('searchInput').value='';searchQue
 function setFilter(f,btn){activeFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');render();}
 
 /* ── CONTACT FORM ─────────────────────────────────────────── */
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbw2lKa2Y18SkXE24Rz4TWvUnQaVrNO68EYXot3MvuQ9Oqufaf1YbqBUy02fa5ZcT9CA/exec';
+
 function togglePill(el){el.classList.toggle('selected');}
-function handleSubmit(){document.getElementById('form-area').style.display='none';document.getElementById('success').classList.add('visible');}
+
+function setFieldError(id,msg){
+  const el=document.getElementById(id);
+  el.classList.toggle('input-error',!!msg);
+  const existing=el.parentElement.querySelector('.field-error-msg');
+  if(msg&&!existing){const e=document.createElement('p');e.className='field-error-msg';e.textContent=msg;el.parentElement.appendChild(e);}
+  else if(!msg&&existing)existing.remove();
+}
+
+async function handleSubmit(){
+  const name=document.getElementById('field-name').value.trim();
+  const email=document.getElementById('field-email').value.trim();
+  const problem=document.getElementById('field-problem').value.trim();
+
+  let valid=true;
+  setFieldError('field-name',name?'':'Please enter your name.');
+  if(!name)valid=false;
+  const emailOk=email&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  setFieldError('field-email',emailOk?'':'Please enter a valid email address.');
+  if(!emailOk)valid=false;
+  setFieldError('field-problem',problem?'':'Please describe what you need help with.');
+  if(!problem)valid=false;
+  if(!valid)return;
+
+  const services=Array.from(document.querySelectorAll('.pill-toggle.selected')).map(el=>el.textContent).join(', ')||'(none selected)';
+  const timeline=document.getElementById('field-timeline').value||'';
+  const budget=document.getElementById('field-budget').value||'';
+  const source=document.getElementById('field-source').value||'';
+
+  const btn=document.querySelector('.btn-submit');
+  btn.disabled=true;
+  btn.textContent='Sending…';
+
+  try{
+    await fetch(SCRIPT_URL,{
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams({name,email,services,problem,timeline,budget,source}).toString()
+    });
+    document.getElementById('form-area').style.display='none';
+    document.getElementById('success').classList.add('visible');
+  }catch(err){
+    btn.disabled=false;
+    btn.textContent='Send inquiry →';
+    const errEl=document.getElementById('submit-error');
+    if(errEl)errEl.style.display='block';
+  }
+}
 
 /* ── HOME FEATURED ────────────────────────────────────────── */
 function renderHomeFeatured(){
