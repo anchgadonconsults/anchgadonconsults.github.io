@@ -95,69 +95,45 @@ function clearSearch(){document.getElementById('searchInput').value='';searchQue
 function setFilter(f,btn){activeFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');render();}
 
 /* ── CONTACT FORM ─────────────────────────────────────────── */
-const SCRIPT_URL='https://script.google.com/macros/s/AKfycbwuzISeGdLTGj5HyAKwGldxIpr2sVGwbKmiD7erHmU5j64gDXe9jfETGtAv-C4GW_rX/exec';
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzsob6HIvIoGiVJ_NMRdWB5LD7j_9sV8Ws9P68-sARh8JWCemQLTqslDnwMxaAwqZW_/exec";
 
-function togglePill(el){el.classList.toggle('selected');}
+function handleSubmit() {
+  const name        = document.getElementById("field-name").value.trim();
+  const email       = document.getElementById("field-email").value.trim();
+  const description = document.getElementById("field-problem").value.trim();
+  const timeline    = document.getElementById("field-timeline").value;
+  const budget      = document.getElementById("field-budget").value;
+  const referral    = document.getElementById("field-source").value;
 
-function setFieldError(id,msg){
-  const el=document.getElementById(id);
-  el.classList.toggle('input-error',!!msg);
-  const existing=el.parentElement.querySelector('.field-error-msg');
-  if(msg&&!existing){const e=document.createElement('p');e.className='field-error-msg';e.textContent=msg;el.parentElement.appendChild(e);}
-  else if(!msg&&existing)existing.remove();
+  const activePill  = document.querySelector(".pill-toggle.active");
+  const service     = activePill ? activePill.textContent.trim() : "Not specified";
+
+  if (!name || !email) {
+    document.getElementById("submit-error").style.display = "block";
+    return;
+  }
+
+  const params = new URLSearchParams({
+    name, email, service, description, timeline, budget, referral
+  });
+
+  fetch(APPS_SCRIPT_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: params.toString()
+  })
+  .then(() => {
+    document.getElementById("form-area").style.display = "none";
+    document.getElementById("success").style.display   = "block";
+  })
+  .catch(() => {
+    document.getElementById("submit-error").style.display = "block";
+  });
 }
 
-async function handleSubmit(){
-  const name=document.getElementById('field-name').value.trim();
-  const email=document.getElementById('field-email').value.trim();
-  const description=document.getElementById('field-problem').value.trim();
-
-  let valid=true;
-  setFieldError('field-name',name?'':'Please enter your name.');
-  if(!name)valid=false;
-  const emailOk=email&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  setFieldError('field-email',emailOk?'':'Please enter a valid email address.');
-  if(!emailOk)valid=false;
-  setFieldError('field-problem',description?'':'Please describe what you need help with.');
-  if(!description)valid=false;
-  if(!valid)return;
-
-  const service=Array.from(document.querySelectorAll('.pill-toggle.selected')).map(el=>el.textContent).join(', ')||'(none selected)';
-  const timeline=document.getElementById('field-timeline').value||'';
-  const budget=document.getElementById('field-budget').value||'';
-  const referral=document.getElementById('field-source').value||'';
-
-  const btn=document.querySelector('.btn-submit');
-  btn.disabled=true;
-  btn.textContent='Sending…';
-
-  const iframe=document.createElement('iframe');
-  iframe.name='gas_frame';
-  iframe.style.display='none';
-  document.body.appendChild(iframe);
-
-  const form=document.createElement('form');
-  form.method='POST';
-  form.action=SCRIPT_URL;
-  form.target='gas_frame';
-  Object.entries({name,email,service,description,timeline,budget,referral}).forEach(([k,v])=>{
-    const inp=document.createElement('input');
-    inp.type='hidden';inp.name=k;inp.value=v;
-    form.appendChild(inp);
-  });
-  document.body.appendChild(form);
-  form.submit();
-  setTimeout(()=>{
-    document.body.removeChild(form);
-    document.body.removeChild(iframe);
-  },5000);
-
-  document.getElementById('form-area').style.display='none';
-  const successEl=document.getElementById('success');
-  successEl.classList.add('visible');
-  successEl.setAttribute('tabindex','-1');
-  successEl.focus();
-  successEl.scrollIntoView({behavior:'smooth',block:'center'});
+function togglePill(el) {
+  document.querySelectorAll(".pill-toggle").forEach(p => p.classList.remove("active"));
+  el.classList.add("active");
 }
 
 /* ── HOME FEATURED ────────────────────────────────────────── */

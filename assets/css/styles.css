@@ -267,7 +267,7 @@
   select.form-input{cursor:pointer;}
   .service-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;}
   .pill-toggle{font-size:10px;letter-spacing:0.06em;padding:6px 12px;border-radius:var(--radius-pill);border:0.5px solid var(--border-mid);background:transparent;color:var(--text-secondary);cursor:pointer;transition:all var(--transition-fast);}
-  .pill-toggle.selected{background:var(--teal);color:#fff;border-color:var(--teal);}
+  .pill-toggle.active{background:var(--teal);color:#fff;border-color:var(--teal);}
   .submit-row{margin-top:28px;padding-top:22px;border-top:0.5px solid var(--border);}
   .btn-submit{width:100%;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;padding:14px;background:var(--teal);color:#fff;border:none;border-radius:2px;cursor:pointer;transition:background var(--transition-fast);}
   .btn-submit:hover{background:var(--teal-dark);}
