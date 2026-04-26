@@ -110,7 +110,7 @@ function setFieldError(id,msg){
 async function handleSubmit(){
   const name=document.getElementById('field-name').value.trim();
   const email=document.getElementById('field-email').value.trim();
-  const problem=document.getElementById('field-problem').value.trim();
+  const description=document.getElementById('field-problem').value.trim();
 
   let valid=true;
   setFieldError('field-name',name?'':'Please enter your name.');
@@ -118,14 +118,14 @@ async function handleSubmit(){
   const emailOk=email&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   setFieldError('field-email',emailOk?'':'Please enter a valid email address.');
   if(!emailOk)valid=false;
-  setFieldError('field-problem',problem?'':'Please describe what you need help with.');
-  if(!problem)valid=false;
+  setFieldError('field-problem',description?'':'Please describe what you need help with.');
+  if(!description)valid=false;
   if(!valid)return;
 
-  const services=Array.from(document.querySelectorAll('.pill-toggle.selected')).map(el=>el.textContent).join(', ')||'(none selected)';
+  const service=Array.from(document.querySelectorAll('.pill-toggle.selected')).map(el=>el.textContent).join(', ')||'(none selected)';
   const timeline=document.getElementById('field-timeline').value||'';
   const budget=document.getElementById('field-budget').value||'';
-  const source=document.getElementById('field-source').value||'';
+  const referral=document.getElementById('field-source').value||'';
 
   const btn=document.querySelector('.btn-submit');
   btn.disabled=true;
@@ -135,7 +135,7 @@ async function handleSubmit(){
     await fetch(SCRIPT_URL,{
       method:'POST',
       mode:'no-cors',
-      body:new URLSearchParams({name,email,services,problem,timeline,budget,source})
+      body:new URLSearchParams({name,email,service,description,timeline,budget,referral})
     });
     document.getElementById('form-area').style.display='none';
     document.getElementById('success').classList.add('visible');
