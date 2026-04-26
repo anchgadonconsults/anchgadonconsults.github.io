@@ -1,115 +1,100 @@
-# anchgadon.com
+# Angel Gadon — Data Systems, Econometrics & Statistical Consulting
 
-Personal portfolio site for Angel Gadon — data systems specialist, econometrician, and statistical educator based in the Philippines.
+**Data systems specialist, econometrician, and statistical educator based in the Philippines.**
 
-**Live site:** [anchgadon.com](https://anchgadonconsults.github.io)
+I help individuals, research teams, and organizations turn messy, disconnected data into something they can actually use — clean pipelines, rigorous models, and results that hold up under scrutiny.
 
----
-
-## Tech stack
-
-- Plain HTML, CSS, JavaScript — no frameworks, no build step
-- Google Fonts (Cormorant Garamond, DM Sans, DM Mono)
-- Deployed on Netlify (primary) and GitHub Pages (mirror)
+**Visit the site:** [anchgadonconsults.github.io](https://anchgadonconsults.github.io)
 
 ---
 
-## Project structure
+## What I do
 
-```
-anch-website/
-├── angel.html        # Main SPA — all five pages in one file
-├── angel.css         # All styles and CSS custom properties
-├── angel.js          # Navigation, portfolio logic, theme, burger menu
-├── og-image.png      # Open Graph image (1200×630)
-├── robots.txt
-├── sitemap.xml
-├── 404.html          # Custom error page
-├── _headers          # Netlify security headers (CSP, HSTS, etc.)
-└── _redirects        # Netlify rewrite: / → angel.html
-```
+**Data Systems**
+Building the infrastructure behind reliable data: ETL pipelines, database design, automated reporting, and dashboard delivery. If your team is still doing manually what a system should be doing automatically, that's the problem I solve.
+
+**Econometrics & Quantitative Research**
+Causal inference, panel data analysis, time-series modeling, and robustness testing. Work is done to publication and submission standard — not just a regression that runs, but one that can be defended.
+
+**Statistical Tutoring & Training**
+One-on-one and group sessions for thesis students, researchers, and professionals. We work through your actual data, your actual model, your actual deadline — not textbook examples.
 
 ---
 
-## Local development
+## Projects
 
-No build tools required. Open directly in a browser:
+Each project below follows this format:
 
-```bash
-open angel.html
-# or on Windows
-start angel.html
-```
-
-For accurate font loading and to avoid CORS issues with local file paths, serve with any static server:
-
-```bash
-# Python
-python -m http.server 3000
-
-# Node
-npx serve .
-```
-
-Then visit `http://localhost:3000`.
+> **Title**
+> *Tags · Duration*
+> What the problem was, and what was done about it.
+> **Outcome:** measurable result — **Tools:** what was used
 
 ---
 
-## Deployment
-
-### Netlify (primary)
-
-**Option A — Drag and drop**
-
-1. Go to [netlify.com](https://netlify.com) and log in.
-2. From the dashboard, drag the entire project folder onto the **"Deploy manually"** drop zone.
-3. Netlify will assign a URL like `amazing-fox-123.netlify.app`.
-4. To use a custom domain: **Site settings → Domain management → Add custom domain**.
-
-**Option B — Connect to GitHub (auto-deploy on push)**
-
-1. Push this repo to GitHub (see below).
-2. Netlify dashboard → **Add new site → Import an existing project → GitHub**.
-3. Select this repo, then set:
-   - **Build command:** *(leave blank)*
-   - **Publish directory:** `.`
-4. Click **Deploy site**.
-
-Every `git push` to `main` will trigger a redeploy automatically.
-
-> The `_headers` file configures security headers (CSP, HSTS, X-Frame-Options).  
-> The `_redirects` file rewrites `/` to `angel.html` so the root URL resolves correctly.
+### Data Systems
 
 ---
 
-### GitHub Pages (mirror)
-
-1. Push this repo to GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Source**, select **Deploy from a branch**.
-4. Set branch to `main` and folder to `/ (root)`.
-5. Click **Save**.
-
-GitHub Pages will serve the site at `https://<your-username>.github.io/<repo-name>/`.
-
-**Important:** GitHub Pages does not process `_headers` or `_redirects`. To make the root URL resolve, rename `angel.html` to `index.html` for the Pages deployment, or use a GitHub Actions workflow to handle this at build time. The `_headers` security rules also will not apply on Pages — they are Netlify-specific.
+**Three days of manual work — condensed into ten minutes**
+*Data Systems · 3 weeks*
+Data collected from four separate sources was manually copied and reformatted each month. Designed a PostgreSQL schema and built a Python ETL pipeline to ingest, clean, and merge all sources automatically.
+**Outcome:** 90% reduction in reporting time — **Tools:** Python, PostgreSQL, Power BI, Excel
 
 ---
 
-## Customization
-
-| What to change | Where |
-|---|---|
-| Personal details, copy, contact info | `angel.html` |
-| Project cards and data | `angel.js` — `projects` array (line 26) |
-| Colors and design tokens | `angel.css` — `:root` block |
-| Social/footer links | `angel.html` — footer and contact sidebar |
-| OG image | Replace `og-image.png` (keep it 1200×630px) |
-| Sitemap date | `sitemap.xml` — `<lastmod>` field |
+**Sales data existed everywhere — but forecasting was still guesswork**
+*Data Systems, Econometrics · 8 weeks*
+Twelve product categories living in disconnected files. Consolidated into SQL, built ARIMA and ETS time-series models per category, and delivered a live forecasting dashboard.
+**Outcome:** ↓23% overstock in the first quarter — **Tools:** R, SQL, Power BI, ARIMA, ETS
 
 ---
 
-## Contact
+**Survey data across sites — stored in five inconsistent formats**
+*Data Systems · 2 weeks*
+Multi-site records in incompatible formats, inconsistent column naming, and mixed date codes. Cleaned, standardised, and merged into a single validated dataset.
+**Outcome:** 5 formats merged, zero data loss — **Tools:** Python, pandas, Excel
 
-Angel Gadon — [anchgadonconsults@gmail.com](mailto:anchgadonconsults@gmail.com)  
-LinkedIn — [linkedin.com/in/anchgadonconsults](https://www.linkedin.com/in/anchgadonconsults)
+---
+
+### Econometrics
+
+---
+
+**The data showed a pattern — but was the intervention the cause?**
+*Econometrics · 5 weeks*
+Five years of wage data across regions. Applied Difference-in-Differences on panel data, tested parallel trends, controlled for fixed effects, and ran full robustness checks.
+**Outcome:** Passed external peer review — **Tools:** R, STATA, LaTeX, ggplot2
+
+---
+
+**Time-series model flagged for non-stationarity — submission at risk**
+*Econometrics · 3 weeks*
+Diagnosed unit root issues using ADF and KPSS tests, re-specified using a VECM approach, and rewrote the results and methodology sections for resubmission.
+**Outcome:** Accepted on first resubmission — **Tools:** EViews, R, VECM, ADF, KPSS
+
+---
+
+### Tutoring & Training
+
+---
+
+**Analysis done — results still couldn't be explained**
+*Tutoring · 6 sessions*
+Regressions had been run but the outputs weren't understood. Re-specified the panel model together, applied robust standard errors, and rewrote the results section collaboratively.
+**Outcome:** Thesis defence passed, no revisions — **Tools:** STATA, R, Panel data
+
+---
+
+**Team needed to read and interpret regression outputs independently**
+*Tutoring · 4 sessions*
+Group sessions on regression fundamentals, coefficient interpretation, and diagnostics — using the team's own data throughout, not generic examples.
+**Outcome:** 4 members independently proficient — **Tools:** R, STATA, OLS
+
+---
+
+## Working with me
+
+Most engagements start with a short discovery call to scope the problem and confirm what's actually needed. From there: a proposal with timeline, delivery with review rounds, and full documentation on handoff.
+
+If you have a dataset, a model, a deadline, or a research problem you're not sure how to approach — [get in touch](https://anchgadonconsults.github.io).
