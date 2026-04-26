@@ -442,10 +442,14 @@
           <p id="submit-error" style="display:none;color:#c0392b;font-size:0.82rem;margin-top:8px;">Something went wrong — please try again or email me directly.</p>
         </div>
       </div>
-      <div class="success-state" id="success">
-        <div class="success-icon"><svg viewBox="0 0 18 18" fill="none" width="20" height="20"><path d="M3 9l4 4 8-8" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h2 class="success-h">Message received —<br><em>I'll be in touch soon.</em></h2>
-        <p class="success-body">Expect a reply within 24 hours. If the inquiry is straightforward, I may respond with a direct answer. If it needs more discussion, I will suggest a short call.</p>
+      <div class="success-modal" id="success" role="dialog" aria-modal="true" aria-labelledby="success-heading">
+        <div class="success-backdrop" onclick="closeSuccess()"></div>
+        <div class="success-card">
+          <button class="success-close" onclick="closeSuccess()" aria-label="Close">✕</button>
+          <div class="success-icon"><svg viewBox="0 0 18 18" fill="none" width="20" height="20"><path d="M3 9l4 4 8-8" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h2 class="success-h" id="success-heading">Message received —<br><em>I'll be in touch soon.</em></h2>
+          <p class="success-body">Expect a reply within 24 hours. If the inquiry is straightforward, I may respond with a direct answer. If it needs more discussion, I will suggest a short call.</p>
+        </div>
       </div>
     </div>
     <div class="sidebar">

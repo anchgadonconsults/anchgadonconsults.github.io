@@ -123,12 +123,17 @@ function handleSubmit() {
     body: params.toString()
   })
   .then(() => {
-    document.getElementById("form-area").style.display = "none";
-    document.getElementById("success").style.display   = "block";
+    const modal = document.getElementById("success");
+    modal.classList.add("visible");
+    modal.querySelector(".success-close").focus();
   })
   .catch(() => {
     document.getElementById("submit-error").style.display = "block";
   });
+}
+
+function closeSuccess() {
+  document.getElementById("success").classList.remove("visible");
 }
 
 function togglePill(el) {

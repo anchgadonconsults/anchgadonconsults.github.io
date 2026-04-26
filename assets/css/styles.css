@@ -293,8 +293,13 @@
   .pn-step:last-child{margin-bottom:0;}
   .pn-num{font-size:9px;color:var(--teal-dark);font-weight:400;min-width:14px;margin-top:1px;}
   .pn-text{font-size:11px;color:var(--text-secondary);line-height:1.6;font-weight:300;}
-  .success-state{display:none;text-align:center;padding:48px 24px;}
-  .success-state.visible{display:block;}
+  /* ── SUCCESS MODAL ───────────────────────────────────────── */
+  .success-modal{display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;padding:20px;}
+  .success-modal.visible{display:flex;}
+  .success-backdrop{position:fixed;inset:0;background:rgba(15,15,14,0.55);backdrop-filter:blur(2px);}
+  .success-card{position:relative;z-index:1;background:var(--surface);border-radius:12px;padding:48px 36px 40px;max-width:420px;width:100%;text-align:center;box-shadow:0 32px 64px rgba(0,0,0,0.18);}
+  .success-close{position:absolute;top:14px;right:14px;background:none;border:none;cursor:pointer;color:var(--text-secondary);width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:14px;transition:background var(--transition-fast),color var(--transition-fast);}
+  .success-close:hover{background:var(--surface2);color:var(--ink);}
   .success-icon{width:44px;height:44px;border-radius:50%;background:var(--teal-light);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
   .success-h{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;margin-bottom:10px;}
   .success-h em{font-style:italic;color:var(--teal);}
@@ -403,6 +408,7 @@
     .deliverables{grid-template-columns:1fr;}
     .contact-wrap{grid-template-columns:1fr;}
     .form-col{padding:32px 20px;}
+    .form-input{font-size:16px;}
     .sidebar{padding:24px 20px;}
     .footer-cols{grid-template-columns:1fr;}
     .filter-row{flex-wrap:wrap;}
