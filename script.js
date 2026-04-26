@@ -138,7 +138,11 @@ async function handleSubmit(){
       body:new URLSearchParams({name,email,service,description,timeline,budget,referral})
     });
     document.getElementById('form-area').style.display='none';
-    document.getElementById('success').classList.add('visible');
+    const successEl=document.getElementById('success');
+    successEl.classList.add('visible');
+    successEl.setAttribute('tabindex','-1');
+    successEl.focus();
+    successEl.scrollIntoView({behavior:'smooth',block:'center'});
   }catch(err){
     btn.disabled=false;
     btn.textContent='Send inquiry →';
