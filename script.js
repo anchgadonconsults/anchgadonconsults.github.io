@@ -135,8 +135,7 @@ async function handleSubmit(){
     await fetch(SCRIPT_URL,{
       method:'POST',
       mode:'no-cors',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body:new URLSearchParams({name,email,services,problem,timeline,budget,source}).toString()
+      body:new URLSearchParams({name,email,services,problem,timeline,budget,source})
     });
     document.getElementById('form-area').style.display='none';
     document.getElementById('success').classList.add('visible');
