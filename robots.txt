@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://anchgadon.com/sitemap.xml
+Sitemap: https://anchgadonconsults.netlify.app/sitemap.xml
