@@ -1,14 +1,12 @@
 /* ── PAGE NAVIGATION ──────────────────────────────────────── */
 function showPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  _pages.forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
   const map={home:0,about:1,services:2,portfolio:3};
-  const links=document.querySelectorAll('.fnav-link');
-  links.forEach(l=>l.classList.remove('active'));
-  if(map[id]!==undefined) links[map[id]].classList.add('active');
-  const mobLinks=document.querySelectorAll('.mob-link');
-  mobLinks.forEach(l=>l.classList.remove('active'));
-  if(map[id]!==undefined) mobLinks[map[id]].classList.add('active');
+  _navLinks.forEach(l=>l.classList.remove('active'));
+  if(map[id]!==undefined) _navLinks[map[id]].classList.add('active');
+  _mobLinks.forEach(l=>l.classList.remove('active'));
+  if(map[id]!==undefined) _mobLinks[map[id]].classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
   if(id==='portfolio') render();
 }
@@ -34,6 +32,21 @@ const projects=[
 ];
 
 let activeFilter='all', searchQuery='';
+
+/* ── DOM CACHE ────────────────────────────────────────────── */
+const _pages        =document.querySelectorAll('.page');
+const _navLinks     =document.querySelectorAll('.fnav-link');
+const _mobLinks     =document.querySelectorAll('.mob-link');
+const _featuredGrid =document.getElementById('featuredGrid');
+const _resumeList   =document.getElementById('resumeList');
+const _featDiv      =document.getElementById('featDiv');
+const _moreDiv      =document.getElementById('moreDiv');
+const _countLabel   =document.getElementById('countLabel');
+const _emptyState   =document.getElementById('emptyState');
+const _emptyTerm    =document.getElementById('emptyTerm');
+const _searchInput  =document.getElementById('searchInput');
+const _clearBtn     =document.getElementById('clearBtn');
+
 function tagClass(t){if(t==='Data Systems')return 'tag-sys';if(t==='Econometrics')return 'tag-eco';if(t==='Tutoring')return 'tag-tut';return 'tag-mix';}
 function hl(text,q,re){if(!q||!re)return text;return text.replace(re,'<mark>$1</mark>');}
 function linkHTML(links){if(!links||!links.length)return '';return links.map(l=>`<a class="proj-link" href="${l.url}" target="_blank" rel="noopener noreferrer">${icons[l.type]||icons.link}${l.label}</a>`).join('');}
@@ -79,19 +92,18 @@ function render(){
   });
   const feat=filtered.filter(p=>p.featured);
   const more=filtered.filter(p=>!p.featured);
-  document.getElementById('featuredGrid').innerHTML=feat.map(p=>featCardHTML(p,q,re)).join('');
-  document.getElementById('resumeList').innerHTML=more.map((p,i)=>resumeCardHTML(p,q,re,i,more.length)).join('');
-  document.getElementById('featDiv').style.display=feat.length?'flex':'none';
-  document.getElementById('moreDiv').style.display=more.length?'flex':'none';
+  _featuredGrid.innerHTML=feat.map(p=>featCardHTML(p,q,re)).join('');
+  _resumeList.innerHTML=more.map((p,i)=>resumeCardHTML(p,q,re,i,more.length)).join('');
+  _featDiv.style.display=feat.length?'flex':'none';
+  _moreDiv.style.display=more.length?'flex':'none';
   const total=filtered.length;
-  document.getElementById('countLabel').textContent=total===0?'No results':total===1?'1 project':total+' projects';
-  const es=document.getElementById('emptyState');
-  if(total===0){es.classList.add('visible');document.getElementById('emptyTerm').textContent=q?'"'+q+'"':'that filter';}
-  else es.classList.remove('visible');
+  _countLabel.textContent=total===0?'No results':total===1?'1 project':total+' projects';
+  if(total===0){_emptyState.classList.add('visible');_emptyTerm.textContent=q?'"'+q+'"':'that filter';}
+  else _emptyState.classList.remove('visible');
 }
 let searchTimeout;
-function handleSearch(){searchQuery=document.getElementById('searchInput').value;document.getElementById('clearBtn').style.display=searchQuery?'block':'none';clearTimeout(searchTimeout);searchTimeout=setTimeout(render,150);}
-function clearSearch(){document.getElementById('searchInput').value='';searchQuery='';document.getElementById('clearBtn').style.display='none';render();}
+function handleSearch(){searchQuery=_searchInput.value;_clearBtn.style.display=searchQuery?'block':'none';clearTimeout(searchTimeout);searchTimeout=setTimeout(render,150);}
+function clearSearch(){_searchInput.value='';searchQuery='';_clearBtn.style.display='none';render();}
 function setFilter(f,btn){activeFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');render();}
 
 /* ── CONTACT FORM ─────────────────────────────────────────── */
@@ -117,6 +129,7 @@ function handleSubmit() {
     name, email, service, description, timeline, budget, referral
   });
 
+  document.getElementById("submit-error").style.display = "none";
   fetch(APPS_SCRIPT_URL, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
