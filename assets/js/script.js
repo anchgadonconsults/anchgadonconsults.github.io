@@ -21,14 +21,129 @@ const icons={
   link:`<svg viewBox="0 0 10 10" fill="none"><path d="M4 6l-1 1a1.5 1.5 0 01-2-2l2-2a1.5 1.5 0 012 0" stroke="#0F6E56" stroke-width="1" stroke-linecap="round"/><path d="M6 4l1-1a1.5 1.5 0 012 2L7 7a1.5 1.5 0 01-2 0" stroke="#0F6E56" stroke-width="1" stroke-linecap="round"/></svg>`
 };
 
-const projects=[
-  {id:1,featured:true,title:"Three days of manual work — condensed into ten minutes",tags:["Data Systems"],duration:"3 weeks",desc:"Data collected from four separate sources was manually copied and reformatted each month. Designed a PostgreSQL schema and built a Python ETL pipeline to ingest, clean, and merge all sources automatically.",tools:["Python","PostgreSQL","Power BI","Excel","ETL"],outcome:"90%",outcomeLbl:"reduction in reporting time",links:[{type:"github",label:"View code",url:"#"},{type:"slides",label:"Presentation",url:"#"}]},
-  {id:2,featured:true,title:"The data showed a pattern — but was the intervention the cause?",tags:["Econometrics"],duration:"5 weeks",desc:"Five years of wage data across regions. Applied Difference-in-Differences on panel data, tested parallel trends, controlled for fixed effects, and ran full robustness checks.",tools:["R","STATA","LaTeX","ggplot2","DiD"],outcome:"✓",outcomeLbl:"passed external peer review",links:[{type:"colab",label:"R notebook",url:"#"},{type:"doc",label:"Write-up",url:"#"}]},
-  {id:3,featured:true,title:"Sales data existed everywhere — but forecasting was still guesswork",tags:["Data Systems","Econometrics"],duration:"8 weeks",desc:"Twelve product categories in disconnected files. Consolidated into SQL, built ARIMA and ETS time-series models per category, and delivered a live forecasting dashboard.",tools:["R","SQL","Power BI","ARIMA","ETS"],outcome:"↓23%",outcomeLbl:"overstock in first quarter",links:[{type:"github",label:"Pipeline code",url:"#"},{type:"canva",label:"Dashboard demo",url:"#"}]},
-  {id:4,featured:true,title:"Analysis done — results still couldn't be explained",tags:["Tutoring"],duration:"6 sessions",desc:"Regressions had been run but outputs weren't understood. Re-specified the panel model together, applied robust standard errors, rewrote results section collaboratively.",tools:["STATA","R","Panel data","Robust SE"],outcome:"100%",outcomeLbl:"defence passed, no revisions",links:[{type:"slides",label:"Session slides",url:"#"}]},
-  {id:5,featured:false,title:"Survey data across sites — stored in five inconsistent formats",tags:["Data Systems"],duration:"2 weeks",desc:"Multi-site records in incompatible formats, inconsistent column naming, mixed date codes. Cleaned, standardised, and merged into a single validated dataset.",tools:["Python","pandas","Excel"],outcome:"5→1",outcomeLbl:"formats merged, zero data loss",links:[{type:"github",label:"Script",url:"#"}]},
-  {id:6,featured:false,title:"Time-series model flagged for non-stationarity — submission at risk",tags:["Econometrics"],duration:"3 weeks",desc:"Diagnosed unit root issues using ADF and KPSS tests, re-specified using VECM approach, rewrote results and methodology sections for resubmission.",tools:["EViews","R","VECM","ADF","KPSS"],outcome:"✓",outcomeLbl:"accepted on first resubmission",links:[{type:"colab",label:"EViews output",url:"#"},{type:"doc",label:"Methodology",url:"#"}]},
-  {id:7,featured:false,title:"Team needed to read and interpret regression outputs independently",tags:["Tutoring"],duration:"4 sessions",desc:"Group sessions on regression fundamentals, coefficient interpretation, and diagnostics using the team's own data throughout.",tools:["R","STATA","OLS"],outcome:"4",outcomeLbl:"members independently proficient",links:[{type:"slides",label:"Training deck",url:"#"},{type:"canva",label:"Visual summary",url:"#"}]}
+// ─────────────────────────────────────────────────────────────
+// PORTFOLIO DATA — add new projects here
+//
+// featured : true  → large card at top of portfolio
+//            false → compact card in "More work" list
+// tags     : one or more of "Data Systems" | "Econometrics" | "Tutoring"
+// outcome  : short metric shown large  e.g. "90%", "3×", "✓", "↓23%"
+// outcomeLbl: label beneath the metric e.g. "reduction in reporting time"
+// links    : [] to hide, or [{type, label, url}]
+//            types: github | colab | canva | slides | doc | link
+// ─────────────────────────────────────────────────────────────
+const projects = [
+
+  {
+    id: 1,
+    featured: true,
+    title: "Three days of manual work — condensed into ten minutes",
+    tags: ["Data Systems"],
+    duration: "3 weeks",
+    desc: "Data collected from four separate sources was manually copied and reformatted each month. Designed a PostgreSQL schema and built a Python ETL pipeline to ingest, clean, and merge all sources automatically.",
+    tools: ["Python", "PostgreSQL", "Power BI", "Excel", "ETL"],
+    outcome: "90%",
+    outcomeLbl: "reduction in reporting time",
+    links: [
+      { type: "github", label: "View code",     url: "#" },
+      { type: "slides", label: "Presentation",  url: "#" },
+    ],
+  },
+
+  {
+    id: 2,
+    featured: true,
+    title: "The data showed a pattern — but was the intervention the cause?",
+    tags: ["Econometrics"],
+    duration: "5 weeks",
+    desc: "Five years of wage data across regions. Applied Difference-in-Differences on panel data, tested parallel trends, controlled for fixed effects, and ran full robustness checks.",
+    tools: ["R", "STATA", "LaTeX", "ggplot2", "DiD"],
+    outcome: "✓",
+    outcomeLbl: "passed external peer review",
+    links: [
+      { type: "colab", label: "R notebook", url: "#" },
+      { type: "doc",   label: "Write-up",   url: "#" },
+    ],
+  },
+
+  {
+    id: 3,
+    featured: true,
+    title: "Sales data existed everywhere — but forecasting was still guesswork",
+    tags: ["Data Systems", "Econometrics"],
+    duration: "8 weeks",
+    desc: "Twelve product categories in disconnected files. Consolidated into SQL, built ARIMA and ETS time-series models per category, and delivered a live forecasting dashboard.",
+    tools: ["R", "SQL", "Power BI", "ARIMA", "ETS"],
+    outcome: "↓23%",
+    outcomeLbl: "overstock in first quarter",
+    links: [
+      { type: "github", label: "Pipeline code",   url: "#" },
+      { type: "canva",  label: "Dashboard demo",  url: "#" },
+    ],
+  },
+
+  {
+    id: 4,
+    featured: true,
+    title: "Analysis done — results still couldn't be explained",
+    tags: ["Tutoring"],
+    duration: "6 sessions",
+    desc: "Regressions had been run but outputs weren't understood. Re-specified the panel model together, applied robust standard errors, rewrote results section collaboratively.",
+    tools: ["STATA", "R", "Panel data", "Robust SE"],
+    outcome: "100%",
+    outcomeLbl: "defence passed, no revisions",
+    links: [
+      { type: "slides", label: "Session slides", url: "#" },
+    ],
+  },
+
+  {
+    id: 5,
+    featured: false,
+    title: "Survey data across sites — stored in five inconsistent formats",
+    tags: ["Data Systems"],
+    duration: "2 weeks",
+    desc: "Multi-site records in incompatible formats, inconsistent column naming, mixed date codes. Cleaned, standardised, and merged into a single validated dataset.",
+    tools: ["Python", "pandas", "Excel"],
+    outcome: "5→1",
+    outcomeLbl: "formats merged, zero data loss",
+    links: [
+      { type: "github", label: "Script", url: "#" },
+    ],
+  },
+
+  {
+    id: 6,
+    featured: false,
+    title: "Time-series model flagged for non-stationarity — submission at risk",
+    tags: ["Econometrics"],
+    duration: "3 weeks",
+    desc: "Diagnosed unit root issues using ADF and KPSS tests, re-specified using VECM approach, rewrote results and methodology sections for resubmission.",
+    tools: ["EViews", "R", "VECM", "ADF", "KPSS"],
+    outcome: "✓",
+    outcomeLbl: "accepted on first resubmission",
+    links: [
+      { type: "colab", label: "EViews output", url: "#" },
+      { type: "doc",   label: "Methodology",   url: "#" },
+    ],
+  },
+
+  {
+    id: 7,
+    featured: false,
+    title: "Team needed to read and interpret regression outputs independently",
+    tags: ["Tutoring"],
+    duration: "4 sessions",
+    desc: "Group sessions on regression fundamentals, coefficient interpretation, and diagnostics using the team's own data throughout.",
+    tools: ["R", "STATA", "OLS"],
+    outcome: "4",
+    outcomeLbl: "members independently proficient",
+    links: [
+      { type: "slides", label: "Training deck",    url: "#" },
+      { type: "canva",  label: "Visual summary",   url: "#" },
+    ],
+  },
+
 ];
 
 let activeFilter='all', searchQuery='';
