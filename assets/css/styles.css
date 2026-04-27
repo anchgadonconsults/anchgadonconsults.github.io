@@ -114,6 +114,15 @@
   .tag-feat{background:var(--ink);color:var(--teal-light);}
   .tool-pill{font-size:9px;padding:3px 9px;border:0.5px solid var(--border);border-radius:var(--radius-pill);color:var(--text-tertiary);}
 
+/* #preloader {
+    background: #000000 url(../images/loader.gif) no-repeat center center;
+    background-size: 30%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+} */
+
   /* ══════════════════════════════════════════════════════════
      PAGE 1 — HOME
   ══════════════════════════════════════════════════════════ */
@@ -473,3 +482,4 @@
   [data-theme="dark"] :is(.tag-tut,.badge-tut){background:#2A1508;color:#D4924A;}
   [data-theme="dark"] .tag-mix{background:#171630;color:#9490D0;}
 
+  
